@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const computerSelection = getCompChoice();
+        const playerSelection = "Rock";
+
+
+
+
+
+
+
+
+        function getCompChoice() {
+            let number = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+            console.log(number);
+            if (number == 1){
+                return "Rock";
+            }
+            else if (number == 2) {
+                return "Paper";
+            }
+            else if (number == 3) {
+                return "Scissors";
+            }
+            else {
+                return "null";
+            }
+        }
+
+        function play(playerSelection, computerSelection) {
+            let outcome;
+            if (playerSelection === computerSelection) {
+                outcome = "Draw, player and computer both chose " + playerSelection + "!";
+                
+            }
+            else if (computerSelection == "Rock" && playerSelection == "Paper"){
+                outcome = "Win, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
+            }
+            else if (computerSelection == "Paper" && playerSelection == "Scissors")
+                outcome = "Win, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
+            else if (computerSelection == "Scissors" && playerSelection == "Rock"){
+                outcome = "Win, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
+            }
+            else if (computerSelection == "Scissors" && playerSelection == "Paper"){
+                outcome = "Loser, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
+            }
+            else if (computerSelection == "Paper" && playerSelection == "Rock"){
+                outcome = "Loser, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
+            }
+            else if (computerSelection == "Rock" && playerSelection == "Scissors"){
+                outcome = "Loser, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
+            }
+            else {
+                outcome = "Error"
+            }
+            return outcome;
+        }
+
+
+        console.log(play(playerSelection, computerSelection));
+
+    </script>
+</body>
+</html>
