@@ -9,17 +9,11 @@
     <script>
         const computerSelection = getCompChoice();
         const playerSelection = "Rock";
-
-
-
-
-
-
-
+        let playerScore = 0;
+        let compScore = 0;
 
         function getCompChoice() {
             let number = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-            console.log(number);
             if (number == 1){
                 return "Rock";
             }
@@ -63,9 +57,21 @@
             return outcome;
         }
 
-
-        console.log(play(playerSelection, computerSelection));
-
+        function game() {
+            let result;
+            for (let i = 0; i < 5; i++) {
+                result = play(playerSelection, computerSelection);
+                if (result.includes("Win")) {
+                    playerScore++;
+                }
+                else if (result.includes("Loser")) {
+                    compScore++;
+                }
+                
+            }
+            return result;
+        }
+        console.log(game());
     </script>
 </body>
 </html>
