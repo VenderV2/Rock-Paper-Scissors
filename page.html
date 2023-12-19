@@ -7,7 +7,6 @@
 </head>
 <body>
     <script>
-        const computerSelection = getCompChoice();
         const playerSelection = "Rock";
         let playerScore = 0;
         let compScore = 0;
@@ -60,6 +59,7 @@
         function game() {
             let result;
             for (let i = 0; i < 5; i++) {
+                let computerSelection = getCompChoice();
                 result = play(playerSelection, computerSelection);
                 if (result.includes("Win")) {
                     playerScore++;
@@ -67,11 +67,14 @@
                 else if (result.includes("Loser")) {
                     compScore++;
                 }
-                
+                console.log(playerScore + " - " + compScore);
+                console.log(result);
             }
-            return result;
+            // console.log(playerScore + " - " + compScore);
+            // return result;
         }
-        console.log(game());
+        // console.log(game());
+        game();
     </script>
 </body>
 </html>
