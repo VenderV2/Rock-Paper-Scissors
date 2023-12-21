@@ -1,11 +1,13 @@
 let playerSelection;
 let playerScore = 0;
 let compScore = 0;
+let gamesPlayed = 0;
 
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
-const output = document.querySelector('.output')
+const output = document.querySelector('.output');
+const score = document.querySelector('.score');
 
 rock.addEventListener('click', () => {
     playerSelection = 'Rock';
@@ -56,6 +58,7 @@ function getCompChoice() {
 }
 
 function play(playerSelection, computerSelection) {
+    gamesPlayed++;
     let outcome;
     if (playerSelection === computerSelection) {
         outcome = "Draw, player and computer both chose " + playerSelection
@@ -88,9 +91,17 @@ function play(playerSelection, computerSelection) {
     else {
         outcome = "Error"
     }
+
+    if (outcome.includes("Win")) {
+        playerScore++;
+    }
+    else if (outcome.includes("Loser")) {
+        compScore++;
+    }
+
     console.log(outcome);
     output.textContent = outcome;
-
+    score.textContent = "Score | " + playerScore + " - " + compScore +  " | " + "    Games Played: " + gamesPlayed;
 }
 
 // function game() {
