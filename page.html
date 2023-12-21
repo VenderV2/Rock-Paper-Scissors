@@ -4,77 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script>
-        const playerSelection = "Rock";
-        let playerScore = 0;
-        let compScore = 0;
+    <div class="title">RPS</div>
 
-        function getCompChoice() {
-            let number = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-            if (number == 1){
-                return "Rock";
-            }
-            else if (number == 2) {
-                return "Paper";
-            }
-            else if (number == 3) {
-                return "Scissors";
-            }
-            else {
-                return "null";
-            }
-        }
+    <div class="content">
+        <div class="choiceBox">
+            <div class="rock">Rock</div>
+            <div class="paper">Paper</div>
+            <div class="scissors">Scissors</div>
+        </div>
 
-        function play(playerSelection, computerSelection) {
-            let outcome;
-            if (playerSelection === computerSelection) {
-                outcome = "Draw, player and computer both chose " + playerSelection + "!";
-                
-            }
-            else if (computerSelection == "Rock" && playerSelection == "Paper"){
-                outcome = "Win, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
-            }
-            else if (computerSelection == "Paper" && playerSelection == "Scissors")
-                outcome = "Win, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
-            else if (computerSelection == "Scissors" && playerSelection == "Rock"){
-                outcome = "Win, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
-            }
-            else if (computerSelection == "Scissors" && playerSelection == "Paper"){
-                outcome = "Loser, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
-            }
-            else if (computerSelection == "Paper" && playerSelection == "Rock"){
-                outcome = "Loser, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
-            }
-            else if (computerSelection == "Rock" && playerSelection == "Scissors"){
-                outcome = "Loser, player chose " + playerSelection + " while computer chose " + computerSelection + "!";
-            }
-            else {
-                outcome = "Error"
-            }
-            return outcome;
-        }
+        <div class="outputWindow">
+            <div class="score"></div>
+            <div class="output"></div>
+        </div>
+    </div>
 
-        function game() {
-            let result;
-            for (let i = 0; i < 5; i++) {
-                let computerSelection = getCompChoice();
-                result = play(playerSelection, computerSelection);
-                if (result.includes("Win")) {
-                    playerScore++;
-                }
-                else if (result.includes("Loser")) {
-                    compScore++;
-                }
-                console.log(playerScore + " - " + compScore);
-                console.log(result);
-            }
-            // console.log(playerScore + " - " + compScore);
-            // return result;
-        }
-        // console.log(game());
-        game();
-    </script>
+
+
+
+    <script src="./rps.js"></script>
 </body>
 </html>

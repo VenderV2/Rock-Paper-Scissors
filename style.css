@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    background-color: rgb(66, 57, 37);
+}
+
+.title {
+    display: flex;
+    flex-grow: 0;
+    height: 40px;
+    font-family: roboto;
+    font-size: 36px;
+    background-color: rgb(255, 237, 223);
+    margin: -15px;
+    padding: 10px;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    user-select: none;
+    color: white;
+}
+
+.content {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 400px;
+    align-self: stretch;
+    padding-bottom: 800px;
+}
+
+.choiceBox {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-family: Roboto;
+    user-select: none;
+    max-width: 200px;
+    
+}
+
+.outputWindow {
+    flex: 1 1 auto;
+    /* max-height: 100px;
+    max-width: 300px; */
+    border: 2px solid grey;
+    margin-right: 20px;
+}
+
+.output {
+    margin: 20px;
+    font-family: roboto;
+    color: white;
+}
+
+.rock, .paper, .scissors {
+    border-radius: 5px;
+    margin: 4px;
+    padding: 4px;
+    padding-left: 8px;
+    margin-right: 80px;
+    color: white;
+}
+
+.rock, .paper, .scissors, .title {
+    background-color: rgb(42, 104, 29);
+}
